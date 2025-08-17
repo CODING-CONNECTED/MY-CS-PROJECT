@@ -9,7 +9,8 @@ from tkinter import simpledialog
 #setting up the window
 screen=tk.Tk()
 screen.title("MENU BASED PROGRAM")
-screen.attributes("-fullscreen",True)
+screen.geometry("1536x864")
+#screen.attributes("-fullscreen",True)
 bg_label = tk.Label(screen)
 bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 bg_label.lower()
@@ -25,8 +26,11 @@ def bug(a,b=None):
     i=0     #CONTROLL DEBUG PRINTING
     if i==1:
         print(a,b)
-
-
+'''pip install Pillow'''
+'''py -3.10 -m pip install Pillow'''
+screen_width = screen.winfo_screenwidth()
+screen_height = screen.winfo_screenheight()
+print(screen_width,screen_height)
 
 
 #BACKSTAGE
@@ -459,7 +463,8 @@ def back(l=0):
 
 def crt_bill():
     global layer,itemindex,fbill,dummyindex
-    screen.attributes("-fullscreen",True)
+    #screen.attributes("-fullscreen",True)
+    screen.geometry("1536x864")
     layer=1
     itemindex=list(dummyindex)
     Hcbill.place_forget()
@@ -603,7 +608,7 @@ def bevrg():
     orderit()
     bgloader("b.png")
 #BINDING
-screen.bind('<Escape>', exf)
+#screen.bind('<Escape>', exf)
 bgloader("h.png")
 evn.bind("<Button-1>",lambda e: on_click(1,e))
 evn.bind("<FocusOut>",lambda e: on_leave(1,e))
